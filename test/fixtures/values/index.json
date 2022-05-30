@@ -1,0 +1,710 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 8,
+                "offset": 7
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 9,
+                "offset": 8
+              },
+              "end": {
+                "line": 1,
+                "column": 12,
+                "offset": 11
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 12,
+              "offset": 11
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": 1,
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 13,
+                "offset": 12
+              },
+              "end": {
+                "line": 1,
+                "column": 14,
+                "offset": 13
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 15,
+            "offset": 14
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 15,
+          "offset": 14
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 1,
+                "offset": 16
+              },
+              "end": {
+                "line": 3,
+                "column": 8,
+                "offset": 23
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 9,
+                "offset": 24
+              },
+              "end": {
+                "line": 3,
+                "column": 12,
+                "offset": 27
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 16
+            },
+            "end": {
+              "line": 3,
+              "column": 12,
+              "offset": 27
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "string",
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 13,
+                "offset": 28
+              },
+              "end": {
+                "line": 3,
+                "column": 21,
+                "offset": 36
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 3,
+            "column": 1,
+            "offset": 16
+          },
+          "end": {
+            "line": 3,
+            "column": 22,
+            "offset": 37
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 3,
+          "column": 1,
+          "offset": 16
+        },
+        "end": {
+          "line": 3,
+          "column": 22,
+          "offset": 37
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 5,
+                "column": 1,
+                "offset": 39
+              },
+              "end": {
+                "line": 5,
+                "column": 8,
+                "offset": 46
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 5,
+                "column": 9,
+                "offset": 47
+              },
+              "end": {
+                "line": 5,
+                "column": 12,
+                "offset": 50
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 5,
+              "column": 1,
+              "offset": 39
+            },
+            "end": {
+              "line": 5,
+              "column": 12,
+              "offset": 50
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": true,
+            "position": {
+              "start": {
+                "line": 5,
+                "column": 13,
+                "offset": 51
+              },
+              "end": {
+                "line": 5,
+                "column": 17,
+                "offset": 55
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 5,
+            "column": 1,
+            "offset": 39
+          },
+          "end": {
+            "line": 5,
+            "column": 18,
+            "offset": 56
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 5,
+          "column": 1,
+          "offset": 39
+        },
+        "end": {
+          "line": 5,
+          "column": 18,
+          "offset": 56
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 7,
+                "column": 1,
+                "offset": 58
+              },
+              "end": {
+                "line": 7,
+                "column": 8,
+                "offset": 65
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 7,
+                "column": 9,
+                "offset": 66
+              },
+              "end": {
+                "line": 7,
+                "column": 12,
+                "offset": 69
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 1,
+              "offset": 58
+            },
+            "end": {
+              "line": 7,
+              "column": 12,
+              "offset": 69
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": null,
+            "position": {
+              "start": {
+                "line": 7,
+                "column": 13,
+                "offset": 70
+              },
+              "end": {
+                "line": 7,
+                "column": 17,
+                "offset": 74
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 7,
+            "column": 1,
+            "offset": 58
+          },
+          "end": {
+            "line": 7,
+            "column": 18,
+            "offset": 75
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 7,
+          "column": 1,
+          "offset": 58
+        },
+        "end": {
+          "line": 7,
+          "column": 18,
+          "offset": 75
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 9,
+                "column": 1,
+                "offset": 77
+              },
+              "end": {
+                "line": 9,
+                "column": 8,
+                "offset": 84
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 9,
+                "column": 9,
+                "offset": 85
+              },
+              "end": {
+                "line": 9,
+                "column": 12,
+                "offset": 88
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 1,
+              "offset": 77
+            },
+            "end": {
+              "line": 9,
+              "column": 12,
+              "offset": 88
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "undefined",
+            "position": {
+              "start": {
+                "line": 9,
+                "column": 13,
+                "offset": 89
+              },
+              "end": {
+                "line": 9,
+                "column": 22,
+                "offset": 98
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 9,
+            "column": 1,
+            "offset": 77
+          },
+          "end": {
+            "line": 9,
+            "column": 23,
+            "offset": 99
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 9,
+          "column": 1,
+          "offset": 77
+        },
+        "end": {
+          "line": 9,
+          "column": 23,
+          "offset": 99
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 11,
+                "column": 1,
+                "offset": 101
+              },
+              "end": {
+                "line": 11,
+                "column": 8,
+                "offset": 108
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 11,
+                "column": 9,
+                "offset": 109
+              },
+              "end": {
+                "line": 11,
+                "column": 12,
+                "offset": 112
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 1,
+              "offset": 101
+            },
+            "end": {
+              "line": 11,
+              "column": 12,
+              "offset": 112
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": null,
+            "regex": {
+              "pattern": "(?:)",
+              "flags": ""
+            },
+            "position": {
+              "start": {
+                "line": 11,
+                "column": 13,
+                "offset": 113
+              },
+              "end": {
+                "line": 11,
+                "column": 19,
+                "offset": 119
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 11,
+            "column": 1,
+            "offset": 101
+          },
+          "end": {
+            "line": 11,
+            "column": 20,
+            "offset": 120
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 11,
+          "column": 1,
+          "offset": 101
+        },
+        "end": {
+          "line": 11,
+          "column": 20,
+          "offset": 120
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 13,
+                "column": 1,
+                "offset": 122
+              },
+              "end": {
+                "line": 13,
+                "column": 8,
+                "offset": 129
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 13,
+                "column": 9,
+                "offset": 130
+              },
+              "end": {
+                "line": 13,
+                "column": 12,
+                "offset": 133
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 1,
+              "offset": 122
+            },
+            "end": {
+              "line": 13,
+              "column": 12,
+              "offset": 133
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": null,
+            "bigint": "0",
+            "position": {
+              "start": {
+                "line": 13,
+                "column": 13,
+                "offset": 134
+              },
+              "end": {
+                "line": 13,
+                "column": 15,
+                "offset": 136
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 13,
+            "column": 1,
+            "offset": 122
+          },
+          "end": {
+            "line": 13,
+            "column": 16,
+            "offset": 137
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 13,
+          "column": 1,
+          "offset": 122
+        },
+        "end": {
+          "line": 13,
+          "column": 16,
+          "offset": 137
+        }
+      }
+    }
+  ],
+  "sourceType": "script",
+  "comments": [],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 1,
+      "offset": 138
+    }
+  }
+}

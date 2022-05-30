@@ -1,0 +1,318 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "W",
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 7,
+            "offset": 6
+          },
+          "end": {
+            "line": 1,
+            "column": 8,
+            "offset": 7
+          }
+        }
+      },
+      "superClass": null,
+      "body": {
+        "type": "ClassBody",
+        "body": [
+          {
+            "type": "FieldDefinition",
+            "static": true,
+            "computed": false,
+            "key": {
+              "type": "Identifier",
+              "name": "x",
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 10,
+                  "offset": 19
+                },
+                "end": {
+                  "line": 2,
+                  "column": 11,
+                  "offset": 20
+                }
+              }
+            },
+            "value": {
+              "type": "JSXFragment",
+              "openingFragment": {
+                "type": "JSXOpeningFragment",
+                "attributes": [],
+                "selfClosing": false,
+                "position": {
+                  "start": {
+                    "line": 2,
+                    "column": 15,
+                    "offset": 24
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 17,
+                    "offset": 26
+                  }
+                }
+              },
+              "closingFragment": {
+                "type": "JSXClosingFragment",
+                "position": {
+                  "start": {
+                    "line": 2,
+                    "column": 18,
+                    "offset": 27
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 21,
+                    "offset": 30
+                  }
+                }
+              },
+              "children": [
+                {
+                  "type": "JSXText",
+                  "value": "y",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 17,
+                      "offset": 26
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 18,
+                      "offset": 27
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 15,
+                  "offset": 24
+                },
+                "end": {
+                  "line": 2,
+                  "column": 21,
+                  "offset": 30
+                }
+              }
+            },
+            "position": {
+              "start": {
+                "line": 2,
+                "column": 3,
+                "offset": 12
+              },
+              "end": {
+                "line": 2,
+                "column": 22,
+                "offset": 31
+              }
+            }
+          },
+          {
+            "type": "MethodDefinition",
+            "kind": "method",
+            "static": false,
+            "computed": false,
+            "key": {
+              "type": "PrivateName",
+              "name": "y",
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 3,
+                  "offset": 34
+                },
+                "end": {
+                  "line": 3,
+                  "column": 5,
+                  "offset": 36
+                }
+              }
+            },
+            "value": {
+              "type": "FunctionExpression",
+              "id": null,
+              "expression": false,
+              "generator": false,
+              "async": false,
+              "params": [],
+              "body": {
+                "type": "BlockStatement",
+                "body": [],
+                "position": {
+                  "start": {
+                    "line": 3,
+                    "column": 8,
+                    "offset": 39
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 10,
+                    "offset": 41
+                  }
+                }
+              },
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 5,
+                  "offset": 36
+                },
+                "end": {
+                  "line": 3,
+                  "column": 10,
+                  "offset": 41
+                }
+              }
+            },
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 3,
+                "offset": 34
+              },
+              "end": {
+                "line": 3,
+                "column": 10,
+                "offset": 41
+              }
+            }
+          },
+          {
+            "type": "FieldDefinition",
+            "computed": false,
+            "key": {
+              "type": "Identifier",
+              "name": "z",
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 3,
+                  "offset": 44
+                },
+                "end": {
+                  "line": 4,
+                  "column": 4,
+                  "offset": 45
+                }
+              }
+            },
+            "value": {
+              "type": "JSXElement",
+              "openingElement": {
+                "type": "JSXOpeningElement",
+                "attributes": [],
+                "name": {
+                  "type": "JSXIdentifier",
+                  "name": "x",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 9,
+                      "offset": 50
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 10,
+                      "offset": 51
+                    }
+                  }
+                },
+                "selfClosing": true,
+                "position": {
+                  "start": {
+                    "line": 4,
+                    "column": 8,
+                    "offset": 49
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 13,
+                    "offset": 54
+                  }
+                }
+              },
+              "closingElement": null,
+              "children": [],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 8,
+                  "offset": 49
+                },
+                "end": {
+                  "line": 4,
+                  "column": 13,
+                  "offset": 54
+                }
+              }
+            },
+            "position": {
+              "start": {
+                "line": 4,
+                "column": 3,
+                "offset": 44
+              },
+              "end": {
+                "line": 4,
+                "column": 14,
+                "offset": 55
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 9,
+            "offset": 8
+          },
+          "end": {
+            "line": 5,
+            "column": 2,
+            "offset": 57
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 2,
+          "offset": 57
+        }
+      }
+    }
+  ],
+  "sourceType": "script",
+  "comments": [],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 6,
+      "column": 1,
+      "offset": 58
+    }
+  }
+}

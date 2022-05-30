@@ -1,0 +1,119 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "theAnswer",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 17,
+              "offset": 16
+            },
+            "end": {
+              "line": 1,
+              "column": 26,
+              "offset": 25
+            }
+          }
+        },
+        "expression": false,
+        "generator": false,
+        "async": false,
+        "params": [],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "Literal",
+                "value": 42,
+                "position": {
+                  "start": {
+                    "line": 2,
+                    "column": 10,
+                    "offset": 39
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 12,
+                    "offset": 41
+                  }
+                }
+              },
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 3,
+                  "offset": 32
+                },
+                "end": {
+                  "line": 2,
+                  "column": 12,
+                  "offset": 41
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 29,
+              "offset": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 2,
+              "offset": 43
+            }
+          }
+        },
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 8,
+            "offset": 7
+          },
+          "end": {
+            "line": 3,
+            "column": 2,
+            "offset": 43
+          }
+        }
+      },
+      "specifiers": [],
+      "source": null,
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 2,
+          "offset": 43
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "comments": [],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 4,
+      "column": 1,
+      "offset": 44
+    }
+  }
+}

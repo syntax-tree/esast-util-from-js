@@ -1,0 +1,117 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "object": {
+            "type": "Identifier",
+            "name": "console",
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 8,
+                "offset": 7
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "log",
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 9,
+                "offset": 8
+              },
+              "end": {
+                "line": 1,
+                "column": 12,
+                "offset": 11
+              }
+            }
+          },
+          "computed": false,
+          "optional": false,
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 12,
+              "offset": 11
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": 1,
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 13,
+                "offset": 12
+              },
+              "end": {
+                "line": 1,
+                "column": 14,
+                "offset": 13
+              }
+            }
+          }
+        ],
+        "optional": false,
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 15,
+            "offset": 14
+          }
+        }
+      },
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 15,
+          "offset": 14
+        }
+      }
+    }
+  ],
+  "sourceType": "script",
+  "comments": [],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 2,
+      "column": 1,
+      "offset": 15
+    }
+  }
+}
