@@ -1,6 +1,6 @@
 {
   "name": "esast-util-from-js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "estree (and esast) utility to parse from JavaScript",
   "license": "MIT",
   "keywords": [
