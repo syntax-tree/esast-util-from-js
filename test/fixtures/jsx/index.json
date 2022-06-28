@@ -124,8 +124,6 @@
             "type": "JSXFragment",
             "openingFragment": {
               "type": "JSXOpeningFragment",
-              "attributes": [],
-              "selfClosing": false,
               "position": {
                 "start": {
                   "line": 4,
