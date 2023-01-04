@@ -2,15 +2,16 @@
  * @typedef {import('../index.js').Plugin} Plugin
  */
 
+import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
-import test from 'tape'
+import test from 'node:test'
 import jsx from 'acorn-jsx'
 // @ts-expect-error: untyped.
 import stage3 from 'acorn-stage3'
 import {fromJs} from '../index.js'
 
-test('estree-util-from-js', (t) => {
-  t.deepEqual(
+test('estree-util-from-js', () => {
+  assert.deepEqual(
     fromJs('1 + "2"'),
     {
       type: 'Program',
@@ -57,7 +58,7 @@ test('estree-util-from-js', (t) => {
     'should work'
   )
 
-  t.throws(
+  assert.throws(
     function () {
       fromJs('import "a"')
     },
@@ -65,7 +66,7 @@ test('estree-util-from-js', (t) => {
     'should fail on an import w/o `module: true`'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     fromJs('import "a"', {module: true}),
     {
       type: 'Program',
@@ -97,7 +98,7 @@ test('estree-util-from-js', (t) => {
     'should support an import w/ `module: true`'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     fromJs('<x />', {plugins: [jsx()]}),
     {
       type: 'Program',
@@ -146,7 +147,7 @@ test('estree-util-from-js', (t) => {
     'should support a plugin'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     fromJs('#!/bin/sh\n1', {allowHashBang: true}),
     {
       type: 'Program',
@@ -185,16 +186,12 @@ test('estree-util-from-js', (t) => {
     },
     'should support `options.allowHashBang`'
   )
-
-  t.end()
 })
 
-test('fixtures', async function (t) {
+test('fixtures', async function () {
   const base = new URL('fixtures/', import.meta.url)
   const filenames = await fs.readdir(base)
   const tests = filenames.filter((d) => d.charAt(0) !== '.')
-
-  t.plan(tests.length)
 
   let index = -1
   while (++index < tests.length) {
@@ -227,8 +224,6 @@ test('fixtures', async function (t) {
       await fs.writeFile(treeUrl, expected)
     }
 
-    t.deepEqual(actual, expected, filename)
+    assert.deepEqual(actual, expected, filename)
   }
-
-  t.end()
 })
