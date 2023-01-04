@@ -18,6 +18,10 @@
 *   [Use](#use)
 *   [API](#api)
     *   [`fromJs(value[, options])`](#fromjsvalue-options)
+    *   [`Options`](#options)
+    *   [`Plugin`](#plugin)
+    *   [`Value`](#value)
+    *   [`Version`](#version)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Contribute](#contribute)
@@ -41,7 +45,7 @@ It turns the tree into a string of JavaScript.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+, 16.0+, or 18.0+), install with [npm][]:
+In Node.js (version 14.14+ or 16.0+), install with [npm][]:
 
 ```sh
 npm install esast-util-from-js
@@ -105,8 +109,8 @@ Yields:
   sourceType: 'module',
   comments: [],
   position: {
-    start: { line: 1, column: 1, offset: 0 },
-    end: { line: 7, column: 1, offset: 157 }
+    start: {line: 1, column: 1, offset: 0},
+    end: {line: 7, column: 1, offset: 157}
   }
 }
 ```
@@ -120,13 +124,25 @@ There is no default export.
 
 Parse a JavaScript (`string` or `Buffer` in UTF-8) to an esast ([`Node`][node]).
 
-##### `options`
+###### Parameters
 
-Configuration (optional).
+*   `value` ([`Value`][value])
+    — serialized JavaScript to parse
+*   `options` ([`Options`][options], optional)
+    — configuration
+
+###### Returns
+
+Tree (`Program`).
+
+### `Options`
+
+Configuration (TypeScript type).
 
 ###### `options.version`
 
-JavaScript version (`number` or `'latest'`, default: `'latest'`).
+JavaScript version ([`Version`][version], default: `'latest'`).
+
 When a number, must be a year in the range `2015` and `2022` (both including).
 `'latest'` is the same as passing the latest supported year.
 
@@ -163,23 +179,51 @@ Whether a shell hasbang is allowed (`boolean`, default: `false`).
 
 ###### `options.plugins`
 
-List of acorn plugins (`Array<Plugin>`).
+List of acorn plugins ([`Array<Plugin>`][plugin], default: `[]`).
 Examples are [`acorn-jsx`][acorn-jsx] and [`acorn-stage3`][acorn-stage3].
 
-##### Returns
+### `Plugin`
 
-Tree ([`Node`][node]).
+Acorn plugin (TypeScript type).
+
+###### Type
+
+```ts
+type Plugin = (Parser: ParserClass) => ParserClass
+```
+
+### `Value`
+
+Input value (TypeScript type).
+
+###### Type
+
+```ts
+type Value = string | Buffer // `Buffer` is added when Node.js types ere used.
+```
+
+### `Version`
+
+JavaScript version (TypeScript type).
+
+`'latest'` is equivalent to the latest supported year.
+
+###### Type
+
+```ts
+type Version = 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 'latest'
+```
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the additional types `Value`, `Options`, `Version`, and `Plugin`.
+It exports the additional types `Options`, `Plugin`, `Value`, and `Version`.
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Contribute
@@ -261,3 +305,11 @@ abide by its terms.
 [acorn-stage3]: https://github.com/acornjs/acorn-stage3
 
 [estree-util-to-js]: https://github.com/syntax-tree/estree-util-to-js
+
+[options]: #options
+
+[plugin]: #plugin
+
+[value]: #value
+
+[version]: #version
