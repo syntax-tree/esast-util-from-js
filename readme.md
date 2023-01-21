@@ -21,7 +21,7 @@
     *   [`Options`](#options)
     *   [`Plugin`](#plugin)
     *   [`Value`](#value)
-    *   [`Version`](#version)
+    *   [`Version`](#version-1)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Contribute](#contribute)
@@ -45,7 +45,7 @@ It turns the tree into a string of JavaScript.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+ or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install esast-util-from-js
@@ -54,14 +54,14 @@ npm install esast-util-from-js
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromJs} from "https://esm.sh/esast-util-from-js@1"
+import {fromJs} from 'https://esm.sh/esast-util-from-js@1'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromJs} from "https://esm.sh/esast-util-from-js@1?bundle"
+  import {fromJs} from 'https://esm.sh/esast-util-from-js@1?bundle'
 </script>
 ```
 
@@ -117,12 +117,12 @@ Yields:
 
 ## API
 
-This package exports the identifier `fromJs`.
+This package exports the identifier [`fromJs`][fromjs].
 There is no default export.
 
 ### `fromJs(value[, options])`
 
-Parse a JavaScript (`string` or `Buffer` in UTF-8) to an esast ([`Node`][node]).
+Parse JavaScript to an esast.
 
 ###### Parameters
 
@@ -133,13 +133,15 @@ Parse a JavaScript (`string` or `Buffer` in UTF-8) to an esast ([`Node`][node]).
 
 ###### Returns
 
-Tree (`Program`).
+Tree ([`Node`][node]).
 
 ### `Options`
 
 Configuration (TypeScript type).
 
-###### `options.version`
+##### Fields
+
+###### `version`
 
 JavaScript version ([`Version`][version], default: `'latest'`).
 
@@ -150,34 +152,34 @@ When a number, must be a year in the range `2015` and `2022` (both including).
 > breaking semver.
 > Pass an actual year to lock that down.
 
-###### `options.module`
+###### `module`
 
 Whether this is a module (ESM) or a script (`boolean`, default: `false`).
 
-###### `options.allowReturnOutsideFunction`
+###### `allowReturnOutsideFunction`
 
 Whether a return statement is allowed in the top scope (`boolean`, default:
 `false`).
 
-###### `options.allowImportExportEverywhere`
+###### `allowImportExportEverywhere`
 
 Whether import/export statements are allowed in the every scope (`boolean`,
 default: `false`).
 
-###### `options.allowAwaitOutsideFunction`
+###### `allowAwaitOutsideFunction`
 
 Whether `await` is allowed in the top scope (`boolean`, default: depends).
 Defaults to `version >= 2022`.
 
-###### `options.allowSuperOutsideMethod`
+###### `allowSuperOutsideMethod`
 
 Whether `super` is allowed outside methods (`boolean`, default: `false`).
 
-###### `options.allowHashBang`
+###### `allowHashBang`
 
 Whether a shell hasbang is allowed (`boolean`, default: `false`).
 
-###### `options.plugins`
+###### `plugins`
 
 List of acorn plugins ([`Array<Plugin>`][plugin], default: `[]`).
 Examples are [`acorn-jsx`][acorn-jsx] and [`acorn-stage3`][acorn-stage3].
@@ -217,7 +219,8 @@ type Version = 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 'latest'
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the additional types `Options`, `Plugin`, `Value`, and `Version`.
+It exports the additional types [`Options`][options], [`Plugin`][plugin],
+[`Value`][value], and [`Version`][version].
 
 ## Compatibility
 
@@ -306,10 +309,12 @@ abide by its terms.
 
 [estree-util-to-js]: https://github.com/syntax-tree/estree-util-to-js
 
+[fromjs]: #fromjsvalue-options
+
 [options]: #options
 
 [plugin]: #plugin
 
 [value]: #value
 
-[version]: #version
+[version]: #version-1
