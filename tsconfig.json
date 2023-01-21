@@ -12,7 +12,6 @@
     "newLine": "lf",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2020",
-    "jsx": "preserve"
+    "target": "es2020"
   }
 }
