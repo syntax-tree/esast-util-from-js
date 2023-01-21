@@ -9,8 +9,15 @@ import jsx from 'acorn-jsx'
 // @ts-expect-error: untyped.
 import stage3 from 'acorn-stage3'
 import {fromJs} from '../index.js'
+import * as mod from '../index.js'
 
-test('estree-util-from-js', () => {
+test('fromJs', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['fromJs'],
+    'should expose the public api'
+  )
+
   assert.deepEqual(
     fromJs('1 + "2"'),
     {
