@@ -9,18 +9,16 @@ import jsx from 'acorn-jsx'
 // @ts-expect-error: untyped.
 import stage3 from 'acorn-stage3'
 import {fromJs} from '../index.js'
-import * as mod from '../index.js'
 
-test('fromJs', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['fromJs'],
-    'should expose the public api'
-  )
+test('fromJs', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('../index.js')).sort(), [
+      'fromJs'
+    ])
+  })
 
-  assert.deepEqual(
-    fromJs('1 + "2"'),
-    {
+  await t.test('should work', async function () {
+    assert.deepEqual(fromJs('1 + "2"'), {
       type: 'Program',
       body: [
         {
@@ -61,21 +59,20 @@ test('fromJs', () => {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 1, column: 8, offset: 7}
       }
-    },
-    'should work'
+    })
+  })
+
+  await t.test(
+    'should fail on an import w/o `module: true`',
+    async function () {
+      assert.throws(function () {
+        fromJs('import "a"')
+      }, /Could not parse JavaScript with Acorn/)
+    }
   )
 
-  assert.throws(
-    function () {
-      fromJs('import "a"')
-    },
-    /Could not parse JavaScript with Acorn/,
-    'should fail on an import w/o `module: true`'
-  )
-
-  assert.deepEqual(
-    fromJs('import "a"', {module: true}),
-    {
+  await t.test('should support an import w/ `module: true`', async function () {
+    assert.deepEqual(fromJs('import "a"', {module: true}), {
       type: 'Program',
       body: [
         {
@@ -101,13 +98,11 @@ test('fromJs', () => {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 1, column: 11, offset: 10}
       }
-    },
-    'should support an import w/ `module: true`'
-  )
+    })
+  })
 
-  assert.deepEqual(
-    fromJs('<x />', {plugins: [jsx()]}),
-    {
+  await t.test('should support a plugin', async function () {
+    assert.deepEqual(fromJs('<x />', {plugins: [jsx()]}), {
       type: 'Program',
       body: [
         {
@@ -150,13 +145,11 @@ test('fromJs', () => {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 1, column: 6, offset: 5}
       }
-    },
-    'should support a plugin'
-  )
+    })
+  })
 
-  assert.deepEqual(
-    fromJs('#!/bin/sh\n1', {allowHashBang: true}),
-    {
+  await t.test('should support `options.allowHashBang`', async function () {
+    assert.deepEqual(fromJs('#!/bin/sh\n1', {allowHashBang: true}), {
       type: 'Program',
       body: [
         {
@@ -190,47 +183,130 @@ test('fromJs', () => {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 2, column: 2, offset: 11}
       }
+    })
+  })
+
+  assert.deepEqual(
+    fromJs(new Uint8Array()),
+    {
+      type: 'Program',
+      body: [],
+      sourceType: 'script',
+      comments: [],
+      position: {
+        start: {line: 1, column: 1, offset: 0},
+        end: {line: 1, column: 1, offset: 0}
+      }
     },
-    'should support `options.allowHashBang`'
+    'should support empty typed arrays'
+  )
+
+  assert.deepEqual(
+    fromJs(new TextEncoder().encode('let a = 1')),
+    {
+      type: 'Program',
+      body: [
+        {
+          type: 'VariableDeclaration',
+          declarations: [
+            {
+              type: 'VariableDeclarator',
+              id: {
+                type: 'Identifier',
+                name: 'a',
+                position: {
+                  start: {line: 1, column: 5, offset: 4},
+                  end: {line: 1, column: 6, offset: 5}
+                }
+              },
+              init: {
+                type: 'Literal',
+                value: 1,
+                position: {
+                  start: {line: 1, column: 9, offset: 8},
+                  end: {line: 1, column: 10, offset: 9}
+                }
+              },
+              position: {
+                start: {line: 1, column: 5, offset: 4},
+                end: {line: 1, column: 10, offset: 9}
+              }
+            }
+          ],
+          kind: 'let',
+          position: {
+            start: {line: 1, column: 1, offset: 0},
+            end: {line: 1, column: 10, offset: 9}
+          }
+        }
+      ],
+      sourceType: 'script',
+      comments: [],
+      position: {
+        start: {line: 1, column: 1, offset: 0},
+        end: {line: 1, column: 10, offset: 9}
+      }
+    },
+    'should support typed arrays'
+  )
+
+  assert.deepEqual(
+    fromJs(new Uint8Array()),
+    {
+      type: 'Program',
+      body: [],
+      sourceType: 'script',
+      comments: [],
+      position: {
+        start: {line: 1, column: 1, offset: 0},
+        end: {line: 1, column: 1, offset: 0}
+      }
+    },
+    'should support empty typed arrays'
   )
 })
 
-test('fixtures', async function () {
+test('fixtures', async function (t) {
   const base = new URL('fixtures/', import.meta.url)
   const filenames = await fs.readdir(base)
-  const tests = filenames.filter((d) => d.charAt(0) !== '.')
+  const tests = filenames.filter(function (d) {
+    return d.charAt(0) !== '.'
+  })
 
   let index = -1
   while (++index < tests.length) {
     const filename = tests[index]
-    const valueUrl = new URL(filename + '/index.js', base)
-    const treeUrl = new URL(filename + '/index.json', base)
-    const value = String(await fs.readFile(valueUrl))
-    const parts = filename.split('-')
-    const module = parts.includes('module')
-    /** @type {Array<Plugin>} */
-    const plugins = []
 
-    if (parts.includes('jsx')) {
-      plugins.push(jsx())
-    }
+    await t.test(filename, async function () {
+      const valueUrl = new URL(filename + '/index.js', base)
+      const treeUrl = new URL(filename + '/index.json', base)
+      const value = String(await fs.readFile(valueUrl))
+      const parts = filename.split('-')
+      const module = parts.includes('module')
+      /** @type {Array<Plugin>} */
+      const plugins = []
 
-    if (parts.includes('stage3')) {
-      plugins.push(stage3)
-    }
+      if (parts.includes('jsx')) {
+        plugins.push(jsx())
+      }
 
-    const actual = fromJs(value, {module, plugins})
-    /** @type {string} */
-    let expected
+      if (parts.includes('stage3')) {
+        plugins.push(stage3)
+      }
 
-    try {
-      expected = JSON.parse(String(await fs.readFile(treeUrl)))
-    } catch {
-      // New fixture.
-      expected = JSON.stringify(actual, null, 2) + '\n'
-      await fs.writeFile(treeUrl, expected)
-    }
+      const actual = fromJs(value, {module, plugins})
+      /** @type {string} */
+      let expected
 
-    assert.deepEqual(actual, expected, filename)
+      try {
+        expected = JSON.parse(String(await fs.readFile(treeUrl)))
+      } catch {
+        // New fixture.
+        expected = JSON.stringify(actual, null, 2) + '\n'
+        await fs.writeFile(treeUrl, expected)
+      }
+
+      assert.deepEqual(actual, expected)
+    })
   }
 })

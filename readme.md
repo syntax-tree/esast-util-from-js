@@ -207,10 +207,12 @@ type Plugin = (Parser: ParserClass) => ParserClass
 
 Input value (TypeScript type).
 
+When a typed array, must be UTF-8.
+
 ###### Type
 
 ```ts
-type Value = string | Buffer // `Buffer` is added when Node.js types ere used.
+type Value = Uint8Array | string
 ```
 
 ### `Version`
