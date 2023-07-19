@@ -154,7 +154,7 @@ Configuration (TypeScript type).
 
 JavaScript version ([`Version`][version], default: `'latest'`).
 
-When a number, must be a year in the range `2015` and `2022` (both including).
+When a number, must be a year in the range `2015` and `2023` (both including).
 `'latest'` is the same as passing the latest supported year.
 
 > ☢️ **Danger**: `'latest'` is a sliding thing, you could consider it as
@@ -224,7 +224,7 @@ JavaScript version (TypeScript type).
 ###### Type
 
 ```ts
-type Version = 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 'latest'
+type Version = 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 'latest'
 ```
 
 ## Types

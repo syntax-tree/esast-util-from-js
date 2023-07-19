@@ -186,9 +186,8 @@ test('fromJs', async function (t) {
     })
   })
 
-  assert.deepEqual(
-    fromJs(new Uint8Array()),
-    {
+  await t.test('should support empty typed arrays', async function () {
+    assert.deepEqual(fromJs(new Uint8Array()), {
       type: 'Program',
       body: [],
       sourceType: 'script',
@@ -197,13 +196,11 @@ test('fromJs', async function (t) {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 1, column: 1, offset: 0}
       }
-    },
-    'should support empty typed arrays'
-  )
+    })
+  })
 
-  assert.deepEqual(
-    fromJs(new TextEncoder().encode('let a = 1')),
-    {
+  await t.test('should support typed arrays', async function () {
+    assert.deepEqual(fromJs(new TextEncoder().encode('let a = 1')), {
       type: 'Program',
       body: [
         {
@@ -246,24 +243,8 @@ test('fromJs', async function (t) {
         start: {line: 1, column: 1, offset: 0},
         end: {line: 1, column: 10, offset: 9}
       }
-    },
-    'should support typed arrays'
-  )
-
-  assert.deepEqual(
-    fromJs(new Uint8Array()),
-    {
-      type: 'Program',
-      body: [],
-      sourceType: 'script',
-      comments: [],
-      position: {
-        start: {line: 1, column: 1, offset: 0},
-        end: {line: 1, column: 1, offset: 0}
-      }
-    },
-    'should support empty typed arrays'
-  )
+    })
+  })
 })
 
 test('fixtures', async function (t) {
@@ -302,7 +283,7 @@ test('fixtures', async function (t) {
         expected = JSON.parse(String(await fs.readFile(treeUrl)))
       } catch {
         // New fixture.
-        expected = JSON.stringify(actual, null, 2) + '\n'
+        expected = JSON.stringify(actual, undefined, 2) + '\n'
         await fs.writeFile(treeUrl, expected)
       }
 
