@@ -69,7 +69,7 @@ test('fromJs', () => {
     function () {
       fromJs('import "a"')
     },
-    /'import' and 'export' may appear only with 'sourceType: module'/,
+    /Could not parse JavaScript with Acorn/,
     'should fail on an import w/o `module: true`'
   )
 

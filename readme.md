@@ -135,6 +135,15 @@ Parse JavaScript to an esast.
 
 Tree ([`Node`][node]).
 
+###### Throws
+
+When the JavaScript cannot be parsed with `acorn`, a
+[`VFileMessage`][vfile-message] is thrown.
+
+This can for example happen when passing modern syntax (you could maybe use a
+newer `version`, or it might be that the syntax is not yet supported), or just
+otherwise invalid JavaScript (you might need a plugin).
+
 ### `Options`
 
 Configuration (TypeScript type).
@@ -308,6 +317,8 @@ abide by its terms.
 [acorn-stage3]: https://github.com/acornjs/acorn-stage3
 
 [estree-util-to-js]: https://github.com/syntax-tree/estree-util-to-js
+
+[vfile-message]: https://github.com/vfile/vfile-message
 
 [fromjs]: #fromjsvalue-options
 

@@ -39,7 +39,7 @@
     "@types/estree-jsx": "^1.0.0",
     "acorn": "^8.0.0",
     "esast-util-from-estree": "^1.0.0",
-    "vfile-message": "^3.0.0"
+    "vfile-message": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
