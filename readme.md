@@ -54,14 +54,14 @@ npm install esast-util-from-js
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromJs} from 'https://esm.sh/esast-util-from-js@1'
+import {fromJs} from 'https://esm.sh/esast-util-from-js@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromJs} from 'https://esm.sh/esast-util-from-js@1?bundle'
+  import {fromJs} from 'https://esm.sh/esast-util-from-js@2?bundle'
 </script>
 ```
 
