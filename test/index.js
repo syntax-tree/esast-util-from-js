@@ -1,5 +1,5 @@
 /**
- * @typedef {import('../index.js').Plugin} Plugin
+ * @typedef {import('esast-util-from-js').Plugin} Plugin
  */
 
 import assert from 'node:assert/strict'
@@ -8,11 +8,11 @@ import test from 'node:test'
 import jsx from 'acorn-jsx'
 // @ts-expect-error: untyped.
 import stage3 from 'acorn-stage3'
-import {fromJs} from '../index.js'
+import {fromJs} from 'esast-util-from-js'
 
 test('fromJs', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('../index.js')).sort(), [
+    assert.deepEqual(Object.keys(await import('esast-util-from-js')).sort(), [
       'fromJs'
     ])
   })
