@@ -121,7 +121,6 @@
           },
           {
             "type": "MethodDefinition",
-            "kind": "method",
             "static": false,
             "computed": false,
             "key": {
@@ -140,6 +139,7 @@
                 }
               }
             },
+            "kind": "method",
             "value": {
               "type": "FunctionExpression",
               "id": null,

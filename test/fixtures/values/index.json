@@ -547,7 +547,6 @@
         "arguments": [
           {
             "type": "Literal",
-            "value": null,
             "regex": {
               "pattern": "(?:)",
               "flags": ""
@@ -649,7 +648,6 @@
         "arguments": [
           {
             "type": "Literal",
-            "value": null,
             "bigint": "0",
             "position": {
               "start": {
